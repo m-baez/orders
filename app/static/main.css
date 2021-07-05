@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.orders {
+  margin: 0 10%;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+thead th:nth-child(9),
+thead th:nth-child(8),
+thead th:nth-child(7) {
+  width: 6%;
+}
+
+thead th:nth-child(6) {
+  width: 40%;
+}
+
+thead th:nth-child(5) {
+  width: 3%;
+}
+thead th:nth-child(4) {
+  width: 5%;
+}
+
+thead th:nth-child(3) {
+  width: 10%;
+}
+
+thead th:nth-child(2),
+thead th:nth-child(1) {
+  width: 14%;
+}
+
+th,
+td {
+  padding: 10px;
+}

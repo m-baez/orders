@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block title %}Pedidos{% endblock %}
+<!--  -->
+{% block content %}
+<h2>Pedidos</h2>
+<section class="orders">
+  <table>
+    <thead>
+      <tr>
+        <th>FECHA</th>
+        <th>CLIENTE</th>
+        <th>PRODUCTO</th>
+        <th>TAM</th>
+        <th>C</th>
+        <th>DESCRIPCIÓN</th>
+        <th>OPCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pedido in pedidos %}
+      <tr>
+        <td>{{ pedido.0 }}</td>
+        <td>{{ pedido.1 }}</td>
+        <td>{{ pedido.2 }}</td>
+        <td>{{ pedido.3 }}</td>
+        <td>{{ pedido.4 }}</td>
+        <td>{{ pedido.5 }}</td>
+        <td>
+          <a href="{{ url_for('orders.print_ticket',id=pedido.6) }}"
+            >Imprimir</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

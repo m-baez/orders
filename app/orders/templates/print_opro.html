@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block title %}Print{% endblock %}
+<!--  -->
+{% block content %}
+<section class="print-container">
+  <div class="print-container__date">
+    <p><b>D'CHELIS | CENTRAL</b></p>
+    <p>{{ fecha }} / {{ hora }}</p>
+    <p>{{ cliente }}</p>
+  </div>
+  <div class="space"></div>
+  <div class="print-container__data">
+    <p>{{ cantidad }} {{ producto }}</p>
+    <p><b>TAMAÑO:</b> {{ tamaño }}</p>
+    <p><b>DESCRIPCIÓN:</b> {{ descripcion }}</p>
+  </div>
+  <div class="space"></div>
+</section>
+
+<script>
+  function load() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        window.location.href = "{{ url_for('orders.view_orders_production') }}";
+      }, 1000);
+    });
+  }
+
+  async function print_ticket() {
+    window.print();
+    await load();
+  }
+
+  print_ticket();
+</script>
+
+{% endblock %}

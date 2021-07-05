@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block title %}Nuevo Pedido{% endblock %}
+<!--  -->
+{% block content %} {% include 'base_orders.html' %}
+<h2>Ingresar Pedido</h2>
+<section class="new_orders">
+  <form action="nuevo_pedido" method="POST">
+    <label>Cliente</label>
+    <input type="text" name="cliente" />
+    <label>Producto</label>
+    <select name="producto" id="product" onchange="calculate_total()">
+      <option value="Baileys">Baileys</option>
+      <option value="Cheesecake">Cheesecake</option>
+      <option value="Chocoflan">Chocoflan</option>
+      <option value="Choconuez">Choconuez</option>
+      <option value="Flan napolitano">Flan napolitano</option>
+      <option value="Kahlua">Kahlua</option>
+      <option value="Manjar">Manjar</option>
+      <option value="Mantequilla">Mantequilla</option>
+      <option value="Marmoleado">Marmoleado</option>
+      <option value="Nutella">Nutella</option>
+      <option value="Oreo">Oreo</option>
+      <option value="Panque">Panque</option>
+      <option value="Piña coco">Piña coco</option>
+      <option value="Rompope">Rompope</option>
+      <option value="Tarta de fresa">Tarta de fresa</option>
+      <option value="Torta de pan">Torta de pan</option>
+      <option value="Torta de pan con domo">Torta de pan con domo</option>
+      <option value="Tropical">Tropical</option>
+    </select>
+    <label>Tamaño</label>
+    <select name="tamaño" id="size" onchange="calculate_total()">
+      <option value="1/4 kg">1/4 kg</option>
+      <option value="1/2 kg">1/2 kg</option>
+      <option value="3/4 kg">3/4 kg</option>
+      <option value="1 kg">1kg</option>
+      <option value="1 1/4 kg">1 1/4 kg</option>
+      <option value="1 1/2 kg">1 1/2 kg</option>
+      <option value="1 3/4 kg">1 3/4 kg</option>
+      <option value="2 kg">2 kg</option>
+    </select>
+    <label>Cantidad</label>
+    <input
+      type="number"
+      name="cantidad"
+      id="quantity"
+      value="1"
+      onchange="calculate_total()"
+    />
+    <label>Fecha</label>
+    <!-- <input type="text" name="fecha" /> -->
+    <input type="date" name="fecha" />
+    <label>Hora</label>
+    <select name="hora">
+      <option value="08:00 Hrs">08:00 Hrs</option>
+      <option value="09:00 Hrs">09:00 Hrs</option>
+      <option value="10:00 Hrs">10:00 Hrs</option>
+      <option value="11:00 Hrs">11:00 Hrs</option>
+      <option value="12:00 Hrs">12:00 Hrs</option>
+      <option value="13:00 Hrs">13:00 Hrs</option>
+      <option value="14:00 Hrs">14:00 Hrs</option>
+      <option value="15:00 Hrs">15:00 Hrs</option>
+      <option value="16:00 Hrs">16:00 Hrs</option>
+      <option value="17:00 Hrs">17:00 Hrs</option>
+      <option value="18:00 Hrs">18:00 Hrs</option>
+      <option value="19:00 Hrs">19:00 Hrs</option>
+      <option value="20:00 Hrs">20:00 Hrs</option>
+    </select>
+    <label>Descripción</label>
+    <textarea name="descripcion" rows="10" cols="50"></textarea>
+    <label>Anticipo</label>
+    <input
+      type="text"
+      name="anticipo"
+      id="advance"
+      onchange="calculate_total()"
+    />
+    <label>Resta</label>
+    <input type="text" name="resta" id="rest" readonly />
+    <label>Total</label>
+    <input type="text" name="total" id="total" value="" readonly />
+    <input type="submit" value="Ingresar" />
+  </form>
+</section>
+{% endblock %}
