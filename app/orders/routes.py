@@ -48,7 +48,7 @@ def view_orders_production():
 
     pedidos = cursor.fetchall()
 
-    return render_template('orders_pro.html', pedidos=pedidos)
+    return render_template('order_list.html', pedidos=pedidos)
 
 
 @orders_bp.route('/nuevo_pedido', methods=['GET', 'POST'])

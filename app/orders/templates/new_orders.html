@@ -4,6 +4,9 @@
 <!--  -->
 {% block content %} {% include 'base_orders.html' %}
 <h2>Ingresar Pedido</h2>
+<span
+  ><a href="{{ url_for('orders.view_orders_production') }}">Pedidos</a></span
+>
 <section class="new_orders">
   <form action="nuevo_pedido" method="POST">
     <label>Cliente</label>
